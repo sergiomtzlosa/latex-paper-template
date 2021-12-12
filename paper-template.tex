@@ -3,7 +3,7 @@
 % !TeX root = paper-template.tex
 % !TeX spellcheck = en-GB
 % !BIB program = bibtex
-\documentclass[10pt, conference, compsocconf]{class/IEEEtran}
+\documentclass[10pt, conference, compsocconf]{classes/IEEEtran}
 
 \include{utils/imports}
 \include{utils/macros}
@@ -23,6 +23,11 @@
 
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)
+
+\pagenumbering{arabic}
+
+\thispagestyle{plain}
+\pagestyle{plain}
 
 % make the title area
 \maketitle
@@ -170,7 +175,7 @@ key1, key2, key3, key4, key5, key6, key7, key8, key9, key10
 
 %\end{thebibliography}
 
-\bibliographystyle{class/IEEEbib}
+\bibliographystyle{classes/IEEEbib}
 \bibliography{paper-template}
 
 \end{document}

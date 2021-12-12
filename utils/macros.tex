@@ -27,4 +27,9 @@
 \renewcommand{\@citess}[1]{\textsuperscript{[#1]}} 
 \makeatother
 
+% page number in first page
+\makeatletter
+\g@addto@macro\maketitle{\thispagestyle{plain}}  
+\makeatother
+
 \setlength{\bibitemsep}{.5\baselineskip plus .05\baselineskip minus .05\baselineskip}
