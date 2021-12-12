@@ -1,14 +1,24 @@
 \setlength{\marginparwidth}{2cm}
 
-\newcommand{\insertimage}[4][1.0]{
+\def\spaceBelowCaptionFigures{-10pt}
 
+% reformat caption indentation and alignment
+% https://tex.stackexchange.com/questions/275131/align-caption-to-the-left
+\newcommand{\centercaption}[1]{
+	\captionsetup{belowskip=\spaceBelowCaptionFigures,justification=raggedright, singlelinecheck=true}
+	\protect\caption{#1}
+}
+
+\newcommand{\insertimage}[4][0.5]{
+	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=#1\textwidth]{#2}
-		\caption{#3}
-		\label{#4}
+		\includegraphics[width=#1\textwidth,height=\textheight,keepaspectratio]{#2}
+		\captionsetup{belowskip=\spaceBelowCaptionFigures, justification=raggedright, singlelinecheck=true}
+		\centercaption{#3}
+		\ifthenelse{\equal{#4}{}}{}{\label{#4}}
 	\end{figure}
-	\FloatBarrier
+%	\FloatBarrier
 }
 
 % brakets for citation superscripts
