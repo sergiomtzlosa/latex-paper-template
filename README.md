@@ -1,1 +1,1 @@
-## Paper template for writing all kind of scientific or not papers/ideas
+## Paper template for writing all kind of scientific (or not) ideas
