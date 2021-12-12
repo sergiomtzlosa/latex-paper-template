@@ -1,0 +1,56 @@
+\usepackage[OT1]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % accents and UTF-8 encoding 
+\usepackage[main=english,spanish]{babel}
+\usepackage[none]{hyphenat} % do not split words at the en of line
+%\usepackage{parskip} % space between paragraphs
+\usepackage[cmex10]{amsmath} % It does not apply typewrtter style on formulas
+\usepackage[protrusion=true,expansion,final]{microtype} % https://tex.stackexchange.com/questions/37029/text-out-of-margins	
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{pdftexcmds}
+\usepackage{catchfile}
+\usepackage{placeins}
+\usepackage{bibspacing}
+\usepackage[superscript,biblabel]{cite}
+\usepackage{microtype}
+%\usepackage{url}
+\usepackage{hyperref}
+\usepackage{lipsum} 
+
+\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+\definecolor{blue-hyperref}{rgb}{0,0.2,0.6}
+
+\hypersetup{
+	colorlinks = true,
+	linkcolor=blue-hyperref,
+	citecolor=blue-hyperref,
+	filecolor=blue-hyperref,
+	urlcolor=blue-hyperref,
+	runcolor=blue-hyperref,
+	menucolor=blue-hyperref,
+	linkbordercolor=blue-hyperref,
+	citebordercolor=blue-hyperref,
+	filebordercolor=blue-hyperref,
+	urlbordercolor=blue-hyperref,
+	runbordercolor=blue-hyperref,
+	menubordercolor=blue-hyperref,
+	pdfpagemode=UseOutlines,
+	hypertexnames = true,
+	pdfencoding = auto, 
+	psdextra, 
+	bookmarksdepth = 4
+	bookmarks=true,
+	bookmarksopen=true,    
+	bookmarksopenlevel=0,
+	bookmarksnumbered=true,
+	plainpages=false
+}

@@ -1,0 +1,20 @@
+\setlength{\marginparwidth}{2cm}
+
+\newcommand{\insertimage}[4][1.0]{
+
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=#1\textwidth]{#2}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+	\FloatBarrier
+}
+
+% brakets for citation superscripts
+% https://tex.stackexchange.com/questions/79591/superscripts-in-bibliography-with-bibtex#79599
+\makeatletter 
+\renewcommand{\@citess}[1]{\textsuperscript{[#1]}} 
+\makeatother
+
+\setlength{\bibitemsep}{.5\baselineskip plus .05\baselineskip minus .05\baselineskip}
