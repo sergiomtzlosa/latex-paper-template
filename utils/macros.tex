@@ -1,6 +1,25 @@
 \setlength{\marginparwidth}{2cm}
 
-\def\spaceBelowCaptionFigures{-10pt}
+\newenvironment{changemargin}[2]{%
+	
+	\begin{list}{}{%
+			\setlength{\topsep}{3pt}%
+			\setlength{\leftmargin}{#1}%
+			\setlength{\rightmargin}{#2}%
+			\setlength{\listparindent}{\parindent}%
+			\setlength{\itemindent}{\parindent}%
+			\setlength{\parsep}{\parskip}%
+		}%
+		\item[]}{\end{list}}
+	
+% Images and equations	
+\def\spaceBelowCaptionFigures{-6pt}
+\def\spaceBelowCaptionEquations{8pt}
+
+\newcommand{\centercaptionequation}[1]{
+	\captionsetup{belowskip=\spaceBelowCaptionEquations,justification=raggedright, singlelinecheck=true}
+	\protect\caption{#1}
+}
 
 % reformat caption indentation and alignment
 % https://tex.stackexchange.com/questions/275131/align-caption-to-the-left
@@ -21,6 +40,32 @@
 %	\FloatBarrier
 }
 
+\DeclareCaptionType{equ}[][]
+
+% https://tex.stackexchange.com/questions/39315/how-to-change-the-numbering-for-different-figures
+\newcommand{\equationname}{Equation}
+\DeclareFloatingEnvironment[name={\protect\equationname}]{eqfigure}
+
+\newcommand{\setequation}[5] {
+	
+	\begin{equ}[H]
+		
+		% https://tex.stackexchange.com/questions/316646/renaming-the-label-of-figure-just-in-some-cases
+		%		\renewcommand{\figurename}{Equation}
+		\begin{changemargin}{#1}{#2}
+			\begin{eqfigure}[H]
+				#3
+				\vspace{-0.5cm}
+				\centercaptionequation{#5}
+				%				\centercaptionformula{#5}
+				\label{#4}
+				%				\addequations{#5} % this is for equations listing
+			\end{eqfigure}
+		\end{changemargin}
+		\vspace{-1.5cm}
+	\end{equ}
+}
+
 % brakets for citation superscripts
 % https://tex.stackexchange.com/questions/79591/superscripts-in-bibliography-with-bibtex#79599
 \makeatletter 
@@ -33,3 +78,5 @@
 \makeatother
 
 \setlength{\bibitemsep}{.5\baselineskip plus .05\baselineskip minus .05\baselineskip}
+
+\input{utils/formulas}
